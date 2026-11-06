@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#302923">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Saniya — The Celebrity Archive</title>
+  <meta name="description" content="A private celebrity archive, for friends only.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ===== SECTION 01 — THE GRAND ENTRANCE ===== -->
+  <header class="section hero" id="home">
+    <div class="hero__frame" aria-hidden="true"></div>
+
+    <p class="eyebrow anim">Private Celebrity Archive</p>
+    <div class="hero__stars anim" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <h1 class="hero__title anim">SANIYA</h1>
+    <p class="hero__subtitle anim">The Original Icon</p>
+
+    <figure class="portrait anim">
+      <span class="portrait__fallback" aria-hidden="true">S</span>
+      <img src="assets/saniya-portrait.jpg" alt="Portrait of Saniya" width="600" height="750"
+           onerror="this.style.display='none'">
+    </figure>
+
+    <p class="tagline anim">“Some people enter a room. Some become the reason it is remembered.”</p>
+    <a class="btn anim" href="#profile" data-scroll>Enter Her World</a>
+  </header>
+
+  <main>
+    <!-- ===== SECTION 02 — THE CELEBRITY PROFILE ===== -->
+    <section class="section profile" id="profile" aria-labelledby="profile-title">
+      <div class="profile__head reveal">
+        <p class="eyebrow">Her Official Profile</p>
+        <h2 class="heading profile__heading" id="profile-title">
+          The Woman.<br>The Legend.<br><em>The Saniya.</em>
+        </h2>
+        <div class="rule" aria-hidden="true">★</div>
+      </div>
+
+      <div class="profile__photo reveal">
+        <img src="assets/saniya-portrait.jpg" alt="Saniya, smiling, with a frangipani flower in her hair"
+             loading="lazy" onerror="this.style.display='none'">
+        <span class="profile__caption">Fig. 1 — The subject, unbothered</span>
+        <div class="seal" aria-label="Officially Iconic seal">
+          <span>OFFICIALLY<strong>ICONIC</strong>★ ★ ★</span>
+        </div>
+      </div>
+
+      <div class="profile__body reveal">
+        <p class="profile__intro">
+          An individual known for her remarkable presence, unpredictable adventures
+          and undeniable main-character energy.
+        </p>
+
+        <dl class="facts">
+          <div><dt>Name</dt><dd>Saniya</dd></div>
+          <div><dt>Birthday</dt><dd>29 August</dd></div>
+          <div><dt>Hometown</dt><dd>Varanasi</dd></div>
+          <div><dt>Official Designation</dt><dd>Professional Icon</dd></div>
+          <div><dt>Status</dt><dd>Permanently Iconic</dd></div>
+          <div><dt>Category</dt><dd>Independent Personality</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== Placeholders for upcoming stages (keep nav working) ===== -->
+    <section class="section coming" id="license"><p class="eyebrow">Stage 3</p><h2 class="heading">The Permanent License of Travel</h2><p>Coming next</p></section>
+    <section class="section coming" id="reviews"><p class="eyebrow">Stage 4</p><h2 class="heading">What People Say</h2><p>Coming soon</p></section>
+    <section class="section coming" id="awards"><p class="eyebrow">Stage 5</p><h2 class="heading">An Award-Winning Personality</h2><p>Coming soon</p></section>
+    <section class="section coming" id="fanclub"><p class="eyebrow">Stage 5</p><h2 class="heading">The Saniya Society</h2><p>Coming soon</p></section>
+  </main>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" aria-label="Primary">
+    <ul class="nav__list">
+      <li><a class="nav__link is-active" href="#home" data-nav>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/></svg>Home</a></li>
+      <li><a class="nav__link" href="#profile" data-nav>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></svg>Profile</a></li>
+      <li><a class="nav__link" href="#license" data-nav>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h4M7 14h10"/></svg>License</a></li>
+      <li><a class="nav__link" href="#reviews" data-nav>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Reviews</a></li>
+      <li><a class="nav__link" href="#awards" data-nav>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg>Awards</a></li>
+      <li><a class="nav__link" href="#fanclub" data-nav>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z"/></svg>Fan Club</a></li>
+    </ul>
+  </nav>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
