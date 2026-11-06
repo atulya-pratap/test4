@@ -15,7 +15,36 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body class="is-locked">
+
+  <!-- ===== OPENING SEQUENCE OVERLAY ===== -->
+  <div id="portal-overlay" class="portal-wrapper">
+    <button id="skip-btn" class="skip-intro-btn">Skip</button>
+    
+    <!-- Phase 1: Terminal Screen -->
+    <div id="phase-terminal" class="portal-phase is-active">
+      <div class="terminal-box">
+        <p id="term-1" class="terminal-line">Initiating secure connection...</p>
+        <p id="term-2" class="terminal-line">Verifying traveler credentials...</p>
+        <p id="term-3" class="terminal-line">Subject: SANIYA</p>
+        <p id="term-4" class="terminal-line">Scanning Permanent License of Travel...</p>
+        <p id="term-5" class="terminal-line blink-text">Standby.</p>
+      </div>
+    </div>
+
+    <!-- Phase 2: Document Scanner -->
+    <div id="phase-document" class="portal-phase">
+      <div id="auth-document" class="auth-document">
+        <img src="assets/saniya-front.jpg" alt="Permanent License of Travel" class="doc-img">
+        <div id="scanner-line" class="scanner-line"></div>
+        <div id="approval-stamp" class="approval-stamp">VERIFIED</div>
+      </div>
+      <div id="action-area" class="action-area">
+        <button id="enter-btn" class="btn btn--lg">Open Archive</button>
+      </div>
+    </div>
+  </div>
+  <!-- ===== END OVERLAY ===== -->
 
   <!-- ===== SECTION 01 — THE GRAND ENTRANCE ===== -->
   <header class="section hero" id="home">
@@ -100,5 +129,6 @@
 
   <script src="js/navigation.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/portal.js"></script>
 </body>
 </html>
