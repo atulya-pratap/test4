@@ -440,3 +440,165 @@ h1, h2, h3, p { margin: 0; }
   }
   .reveal, .hero .anim { opacity: 1; transform: none; }
 }
+
+/* ==========================================================
+   PORTAL OPENING SEQUENCE
+   ========================================================== */
+
+body.is-locked {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.portal-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--charcoal);
+  color: var(--gold-soft);
+  font-family: var(--font-type);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s var(--ease), visibility 0.8s;
+}
+
+.portal-wrapper.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.portal-phase {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.8s var(--ease), visibility 0.8s;
+}
+.portal-phase.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.skip-intro-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 110;
+  background: none;
+  border: 1px solid rgba(216, 199, 156, 0.4);
+  color: var(--gold-soft);
+  padding: 8px 16px;
+  font-family: var(--font-type);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  opacity: 0.6;
+  border-radius: 2px;
+  transition: opacity 0.3s var(--ease), background 0.3s var(--ease);
+}
+.skip-intro-btn:hover {
+  opacity: 1;
+  background: rgba(216, 199, 156, 0.1);
+}
+
+/* Terminal Screen */
+.terminal-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 24px;
+}
+.terminal-line {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  margin: 10px 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+.terminal-line.is-visible { opacity: 1; transform: translateY(0); }
+.blink-text { animation: text-pulse 1.5s infinite var(--ease); }
+@keyframes text-pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* Document Scanner */
+.auth-document {
+  position: relative;
+  width: min(90vw, 450px);
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  border-radius: 6px;
+  background: var(--ivory);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  margin-bottom: 40px;
+}
+.doc-img { width: 100%; display: block; filter: contrast(1.05) saturate(0.9); }
+
+.scanner-line {
+  position: absolute;
+  left: 0; right: 0; top: -10px;
+  height: 3px;
+  background: #14a38b;
+  box-shadow: 0 0 16px 3px #14a38b, 0 0 6px #14a38b;
+  opacity: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.scanner-line.is-scanning {
+  animation: scan-pass 2.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+@keyframes scan-pass {
+  0%   { top: 0; opacity: 0; }
+  10%  { opacity: 0.8; }
+  50%  { opacity: 0.9; }
+  90%  { opacity: 0.8; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.approval-stamp {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(2) rotate(-10deg);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 700;
+  color: #14a38b;
+  border: 6px solid #14a38b;
+  padding: 8px 24px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s ease-in;
+  text-shadow: 0 0 4px rgba(255,255,255,0.8);
+  box-shadow: inset 0 0 4px rgba(255,255,255,0.5), 0 0 8px rgba(255,255,255,0.4);
+}
+.approval-stamp.is-stamped {
+  opacity: 0.9;
+  transform: translate(-50%, -50%) scale(1) rotate(-10deg);
+}
+
+.thud { animation: thud-shake 0.3s ease-out; }
+@keyframes thud-shake {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(6px); }
+  50% { transform: translateY(-4px); }
+  75% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
+/* Action Area */
+.action-area {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.action-area.is-visible { opacity: 1; transform: translateY(0); }
+.btn--lg { padding: 0 40px; font-size: 0.9rem; }
